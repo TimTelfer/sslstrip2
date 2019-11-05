@@ -58,6 +58,9 @@ class ClientRequest(Request):
         if 'accept-encoding' in headers:
             del headers['accept-encoding']
 
+        if 'content-security-policy' in headers:
+        	del headers['content-security-policy']
+
         if 'referer' in headers:
         	real = self.urlMonitor.real
         	if len(real)>0:
